@@ -19,7 +19,7 @@ export default class {
     // ** at this point Vuex is undefined
     ;(this.state = {
       // all common/shared properties
-      data: [],
+      data: ['default value'],
       id: '',
       page: 1,
     }),

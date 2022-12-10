@@ -1,11 +1,17 @@
 <script>
 import { defineComponent } from 'vue'
+import { mapActions, mapGetters } from 'vuex'
 import HelloWorld from './components/HelloWorld.vue'
 
 export default defineComponent({
   name: 'App',
   components: {
     HelloWorld,
+  },
+  computed: {
+    ...mapGetters({
+      baseID: 'baseStoreModule/baseID',
+    }),
   },
 })
 </script>

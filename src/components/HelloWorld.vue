@@ -1,5 +1,6 @@
 <script>
 import { ref, defineComponent } from 'vue'
+import { mapActions, mapGetters } from 'vuex'
 
 export default defineComponent({
   name: 'HelloWorld',
@@ -9,16 +10,28 @@ export default defineComponent({
       required: true,
     },
   },
-  setup() {
-    const count = ref(0)
-    return { count }
+
+  computed: {
+    ...mapGetters({
+      baseID: 'baseModuleStore/baseID',
+    }),
+  },
+  methods: {
+    getdata() {
+      return this.baseID
+    },
+  },
+  data() {
+    return {
+      count: ref(0),
+    }
   },
 })
 </script>
 
 <template>
   <div>
-    <h1>{{ msg }}</h1>
+    <h1 style="color: red">{{ `BASE ID: ${baseID}` }}</h1>
 
     <p>
       Recommended IDE setup:
