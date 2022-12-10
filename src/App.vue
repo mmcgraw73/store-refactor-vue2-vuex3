@@ -10,7 +10,7 @@ export default defineComponent({
   },
   computed: {
     ...mapGetters({
-      baseID: 'baseStoreModule/baseID',
+      baseID: 'baseModuleStore/baseID',
     }),
   },
 })
@@ -19,6 +19,7 @@ export default defineComponent({
 <template>
   <div id="app">
     <img src="@/assets/logo.svg" alt="Vite logo" />
+    <h2>{{ `App.vue - baseID: ${baseID}` }}</h2>
     <HelloWorld msg="Hello Vue 2 + Vite" />
   </div>
 </template>
