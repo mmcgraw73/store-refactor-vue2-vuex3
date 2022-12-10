@@ -32,8 +32,9 @@ export default defineComponent({
 
 <template>
   <div>
-    <h1 style="color: red">{{ `BASE ID: ${baseID}` }}</h1>
-    <h2 style="color: green">{{ `CHILD DATA ARR: ${dumbdata}` }}</h2>
+    <h5>HelloWorld Component Starts Here</h5>
+    <h3 style="color: red">{{ `GRANDCHILD BASE ID: ${baseID}` }}</h3>
+    <h3 style="color: green">{{ `CHILD DATA ARR: ${dumbdata}` }}</h3>
     <p>
       Recommended IDE setup:
       <a href="https://code.visualstudio.com/" target="_blank">VSCode</a>

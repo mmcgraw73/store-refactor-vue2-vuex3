@@ -7,10 +7,12 @@ export default class ChildStoreModule extends BaseStoreModule {
 
     this.state = {
       ...this.state,
+      baseID: 11,
     }
 
     this.getters = {
       ...this.getters,
+      baseID: (state) => state.baseID,
     }
 
     this.actions = {
