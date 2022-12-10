@@ -14,6 +14,7 @@ export default defineComponent({
   computed: {
     ...mapGetters({
       baseID: 'grandChildModuleStore/baseID',
+      dumbdata: 'childModuleStore/dumbdata',
     }),
   },
   methods: {
@@ -32,7 +33,7 @@ export default defineComponent({
 <template>
   <div>
     <h1 style="color: red">{{ `BASE ID: ${baseID}` }}</h1>
-
+    <h2 style="color: green">{{ `CHILD DATA ARR: ${dumbdata}` }}</h2>
     <p>
       Recommended IDE setup:
       <a href="https://code.visualstudio.com/" target="_blank">VSCode</a>

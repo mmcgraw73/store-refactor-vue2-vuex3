@@ -19,12 +19,12 @@ export default class {
     // ** at this point Vuex is undefined
     ;(this.state = {
       // all common/shared properties
-      data: ['default value'],
+      dumbdata: ['default value'],
       id: '',
       page: 1,
     }),
       (this.getters = {
-        data: (state) => state.data,
+        dumbdata: (state) => state.dumbdata,
         orgId: (state) => state.orgId,
       }),
       (this.actions = {
