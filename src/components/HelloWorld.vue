@@ -13,7 +13,7 @@ export default defineComponent({
 
   computed: {
     ...mapGetters({
-      baseID: 'baseModuleStore/baseID',
+      baseID: 'grandChildModuleStore/baseID',
     }),
   },
   methods: {
