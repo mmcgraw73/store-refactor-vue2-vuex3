@@ -31,6 +31,7 @@ export default defineComponent({
     },
     bumpCount() {
       if (this.updatr === this.count) {
+        console.log('turds are stinky', this.count)
         this.count = this.count++
       }
     },
