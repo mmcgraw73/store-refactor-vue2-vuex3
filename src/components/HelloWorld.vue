@@ -15,11 +15,11 @@ export default defineComponent({
   },
   computed: {
     ...mapGetters({
-      fakeID: 'grandChildModuleStore/fakeID',
+      fakeID: 'childModuleStore/fakeID',
       dumbdata: 'childModuleStore/dumbdata',
     }),
     updatr() {
-      return this.updateFakeID(this.count)
+      return this.updatefakeID(this.count++)
     },
   },
   methods: {
