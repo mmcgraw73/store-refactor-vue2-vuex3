@@ -16,8 +16,8 @@ export default defineComponent({
   computed: {
     ...mapGetters({
       fakeChildID: 'childModuleStore/fakeID',
-      fakeGrandID: 'grandchildModuleStore/fakeID'
-      fakeBaseID: 'baseModuleStore/fakeID'
+      fakeGrandID: 'grandchildModuleStore/fakeID',
+      fakeBaseID: 'baseModuleStore/fakeID',
       dumbdata: 'childModuleStore/dumbdata',
     }),
     updatr() {
