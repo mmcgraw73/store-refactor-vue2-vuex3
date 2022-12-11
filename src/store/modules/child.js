@@ -17,8 +17,13 @@ export default class ChildStoreModule extends BaseStoreModule {
 
     this.actions = {
       ...this.actions,
-      updatefakeID: ({ commit }, id) => {
-        commit(RESET_BASE_ID, id)
+      updatefakeID: ({ commit }) => {
+        fetch('https://jsonplaceholder.typicode.com/posts/10')
+          .then((response) => response.json())
+          .then((json) => {
+            console.log(json)
+            commit(RESET_BASE_ID, json.id)
+          })
       },
     }
 

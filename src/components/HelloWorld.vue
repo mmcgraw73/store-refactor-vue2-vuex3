@@ -15,7 +15,9 @@ export default defineComponent({
   },
   computed: {
     ...mapGetters({
-      fakeID: 'childModuleStore/fakeID',
+      fakeChildID: 'childModuleStore/fakeID',
+      fakeGrandID: 'grandchildModuleStore/fakeID'
+      fakeBaseID: 'baseModuleStore/fakeID'
       dumbdata: 'childModuleStore/dumbdata',
     }),
     updatr() {
@@ -26,9 +28,7 @@ export default defineComponent({
     ...mapActions({
       updatefakeID: 'childModuleStore/updatefakeID',
     }),
-    getdata() {
-      return this.fakeID
-    },
+
     bumpCount() {
       this.count = this.count++
       return this.updatr
@@ -46,9 +46,9 @@ export default defineComponent({
 <template>
   <div @click="bumpCount">
     <h5>HelloWorld Component Starts Here</h5>
-    <h3 style="color: red">{{ `GRANDCHILD FAKE ID: ${fakeID}` }}</h3>
-    <h3 style="color: green">{{ `CHILD FAKE ID: ${fakeID}` }}</h3>
-    <h3 style="color: red">{{ `BASE FAKE ID: ${fakeID}` }}</h3>
+    <h3 style="color: red">{{ `GRANDCHILD FAKE ID: ${fakeGrandID}` }}</h3>
+    <h3 style="color: green">{{ `CHILD FAKE ID: ${fakeChildID}` }}</h3>
+    <h3 style="color: red">{{ `BASE FAKE ID: ${fakeBaseID}` }}</h3>
   </div>
 </template>
 
