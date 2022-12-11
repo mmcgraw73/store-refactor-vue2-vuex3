@@ -19,7 +19,7 @@ export default defineComponent({
       dumbdata: 'childModuleStore/dumbdata',
     }),
     updatr() {
-      return this.init < this.count ? this.updateFakeID(this.count) : this.count
+      return this.updateFakeID(this.count)
     },
   },
   methods: {
@@ -30,11 +30,8 @@ export default defineComponent({
       return this.fakeID
     },
     bumpCount() {
-      if (this.updatr === this.count) {
-        console.log('turds are stinky', this.count)
-        this.count = this.count++
-        return this.updatr
-      }
+      this.count = this.count++
+      return this.updatr
     },
   },
   data() {
