@@ -27,11 +27,12 @@ export default defineComponent({
   methods: {
     ...mapActions({
       updatefakeID: 'childModuleStore/updatefakeID',
+      get: 'grandChildModuleStore/get',
     }),
 
     bumpCount() {
       this.count = this.count++
-      return this.updatr
+      return this.get
     },
   },
   data() {

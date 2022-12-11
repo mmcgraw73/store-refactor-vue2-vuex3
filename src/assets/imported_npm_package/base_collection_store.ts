@@ -19,7 +19,7 @@ export default class {
     // ** at this point Vuex is undefined
     ;(this.state = {
       // all common/shared properties
-      dumbdata: ['0', '1'],
+      dumbdata: [],
       id: '',
       page: 1,
     }),
@@ -28,23 +28,19 @@ export default class {
         id: (state) => state.id,
       }),
       (this.actions = {
-        get: ({ commit, dispatch }) => {
-          commit(GET_BASE_COLLECTION_PENDING)
-
-          return dispatch('load')
+        get: ({ commit }, data) => {
+          fetch('https://jsonplaceholder.typicode.com/posts/10')
+            .then((response) => response.json())
+            .then((json) => {
+              console.log(json)
+              commit(GET_BASE_COLLECTION_PENDING, json)
+            })
         },
-        load: () => {
-          throw new Error('You have not defined a `load` action in your vuex module.')
-        },
-        next: ({ dispatch, getters }) => {
-          const page = getters.page + 1
-
-          return dispatch('setPage', page)
-        },
-        previous: ({ dispatch, getters }) => {
-          const page = getters.page - 1
-
-          return dispatch('setPage', page)
+      }),
+      (this.mutations = {
+        [GET_BASE_COLLECTION_PENDING]: (data) => {
+          this.state.dumbdata = data
+          console.log('base base base dumb data mutation', data)
         },
       })
   }
