@@ -28,6 +28,9 @@ export default defineComponent({
 html {
   background: #222021;
 }
+img {
+  max-width: 200px;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
