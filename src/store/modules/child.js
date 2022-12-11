@@ -1,4 +1,5 @@
 import BaseStoreModule from './base'
+import { RESET_BASE_ID } from '@/store/constants'
 
 export default class ChildStoreModule extends BaseStoreModule {
   constructor() {
@@ -7,7 +8,6 @@ export default class ChildStoreModule extends BaseStoreModule {
 
     this.state = {
       ...this.state,
-      baseID: 11,
     }
 
     this.getters = {
@@ -17,10 +17,17 @@ export default class ChildStoreModule extends BaseStoreModule {
 
     this.actions = {
       ...this.actions,
+      updateBaseID: ({ commit }, id) => {
+        commit(RESET_BASE_ID, id)
+      },
     }
 
     this.mutations = {
       ...this.mutations,
+      [RESET_BASE_ID]: (state, id) => {
+        state.baseID = id
+        console.log('CHILD MUTATATION - BASE ID', id)
+      },
     }
   }
 }

@@ -10,7 +10,9 @@ export default defineComponent({
       required: true,
     },
   },
-
+  mounted() {
+    this.updateBaseID('73')
+  },
   computed: {
     ...mapGetters({
       baseID: 'grandChildModuleStore/baseID',
@@ -18,6 +20,9 @@ export default defineComponent({
     }),
   },
   methods: {
+    ...mapActions({
+      updateBaseID: 'childModuleStore/updateBaseID',
+    }),
     getdata() {
       return this.baseID
     },
