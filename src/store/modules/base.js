@@ -10,12 +10,12 @@ export default class BaseStoreModule extends BaseCollectionModule {
     console.log('context', this)
     this.state = {
       ...this.state,
-      baseID: 0,
+      fakeID: 0,
     }
 
     this.getters = {
       ...this.getters,
-      baseID: (state) => state.baseID,
+      fakeID: (state) => state.fakeID,
     }
 
     this.actions = {

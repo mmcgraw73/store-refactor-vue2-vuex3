@@ -11,20 +11,20 @@ export default defineComponent({
     },
   },
   mounted() {
-    this.updateBaseID('73')
+    this.updatefakeID('73')
   },
   computed: {
     ...mapGetters({
-      baseID: 'grandChildModuleStore/baseID',
+      fakeID: 'grandChildModuleStore/fakeID',
       dumbdata: 'childModuleStore/dumbdata',
     }),
   },
   methods: {
     ...mapActions({
-      updateBaseID: 'childModuleStore/updateBaseID',
+      updatefakeID: 'childModuleStore/updatefakeID',
     }),
     getdata() {
-      return this.baseID
+      return this.fakeID
     },
   },
   data() {
@@ -38,7 +38,7 @@ export default defineComponent({
 <template>
   <div>
     <h5>HelloWorld Component Starts Here</h5>
-    <h3 style="color: red">{{ `GRANDCHILD BASE ID: ${baseID}` }}</h3>
+    <h3 style="color: red">{{ `GRANDCHILD BASE ID: ${fakeID}` }}</h3>
     <h3 style="color: green">{{ `CHILD DATA ARR: ${dumbdata}` }}</h3>
     <p>
       Recommended IDE setup:

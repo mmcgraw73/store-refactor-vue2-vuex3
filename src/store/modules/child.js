@@ -12,12 +12,12 @@ export default class ChildStoreModule extends BaseStoreModule {
 
     this.getters = {
       ...this.getters,
-      baseID: (state) => state.baseID,
+      fakeID: (state) => state.fakeID,
     }
 
     this.actions = {
       ...this.actions,
-      updateBaseID: ({ commit }, id) => {
+      updatefakeID: ({ commit }, id) => {
         commit(RESET_BASE_ID, id)
       },
     }
@@ -25,7 +25,7 @@ export default class ChildStoreModule extends BaseStoreModule {
     this.mutations = {
       ...this.mutations,
       [RESET_BASE_ID]: (state, id) => {
-        state.baseID = id
+        state.fakeID = id
         console.log('CHILD MUTATATION - BASE ID', id)
       },
     }
