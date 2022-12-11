@@ -33,6 +33,7 @@ export default defineComponent({
       if (this.updatr === this.count) {
         console.log('turds are stinky', this.count)
         this.count = this.count++
+        return this.updatr
       }
     },
   },
