@@ -30,8 +30,9 @@ export default defineComponent({
       return this.fakeID
     },
     bumpCount() {
-      console.log('bump count', this.count++)
-      this.count = this.count++
+      if (this.updatr === this.count) {
+        this.count = this.count++
+      }
     },
   },
   data() {
