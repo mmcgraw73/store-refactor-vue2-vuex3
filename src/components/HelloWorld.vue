@@ -11,13 +11,16 @@ export default defineComponent({
     },
   },
   mounted() {
-    this.updatefakeID('73')
+    this.init = this.count
   },
   computed: {
     ...mapGetters({
       fakeID: 'grandChildModuleStore/fakeID',
       dumbdata: 'childModuleStore/dumbdata',
     }),
+    updatr() {
+      return this.init < this.count ? this.updateFakeID(this.count) : this.count
+    },
   },
   methods: {
     ...mapActions({
@@ -26,17 +29,22 @@ export default defineComponent({
     getdata() {
       return this.fakeID
     },
+    bumpCount() {
+      console.log('bump count', this.count++)
+      this.count = this.count++
+    },
   },
   data() {
     return {
       count: ref(0),
+      init: null,
     }
   },
 })
 </script>
 
 <template>
-  <div>
+  <div @click="bumpCount">
     <h5>HelloWorld Component Starts Here</h5>
     <h3 style="color: red">{{ `GRANDCHILD FAKE ID: ${fakeID}` }}</h3>
     <h3 style="color: green">{{ `CHILD FAKE ID: ${fakeID}` }}</h3>
