@@ -26,7 +26,7 @@ export default class ChildStoreModule extends BaseStoreModule {
       ...this.mutations,
       [RESET_BASE_ID]: (state, id) => {
         state.fakeID = id
-        console.log('CHILD MUTATATION - BASE ID', id)
+        console.log('CHILD MUTATATION - FAKE ID', id)
       },
     }
   }

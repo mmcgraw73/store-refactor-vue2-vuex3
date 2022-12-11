@@ -38,8 +38,9 @@ export default defineComponent({
 <template>
   <div>
     <h5>HelloWorld Component Starts Here</h5>
-    <h3 style="color: red">{{ `GRANDCHILD BASE ID: ${fakeID}` }}</h3>
-    <h3 style="color: green">{{ `CHILD DATA ARR: ${dumbdata}` }}</h3>
+    <h3 style="color: red">{{ `GRANDCHILD FAKE ID: ${fakeID}` }}</h3>
+    <h3 style="color: green">{{ `CHILD FAKE ID: ${}` }}</h3>
+    <h3 style="color: red">{{ `BASE FAKE ID: ${fakeID}` }}</h3>
   </div>
 </template>
 

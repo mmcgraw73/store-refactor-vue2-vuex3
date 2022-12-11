@@ -25,6 +25,9 @@ export default defineComponent({
 </template>
 
 <style>
+html {
+  background: #222021;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
