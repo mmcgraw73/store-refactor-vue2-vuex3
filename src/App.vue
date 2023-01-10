@@ -33,6 +33,9 @@ html {
 h5 {
   color: red;
 }
+span {
+  color: yellow;
+}
 
 img {
   max-width: 200px;

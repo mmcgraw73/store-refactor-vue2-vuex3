@@ -52,18 +52,22 @@ export default defineComponent({
 
 <template>
   <div @click="bumpCount">
-    <h5>HelloWorld.vue </br> childModuleStore/name</br> {{ name }}</h5>
-    <h5 style="color: red">HelloWorld.vue </br> childModuleStore/childName</br> {{ childName }}</h5>
-    <h5 style="color: turquoise">HelloWorld.vue </br> grandChildModuleStore/name</br> {{ name }}</h5>
-    <h5 style="color: red">HelloWorld.vue </br> grandChildModuleStore/grandchildName</br> {{ grandchildName }}</h5>
+    <h5>HelloWorld.vue </br> childModuleStore/name</br> <span>{{ name }}</span></h5>
+    <h5 style="color: red">HelloWorld.vue </br> childModuleStore/childName</br> <span>{{ childName }}</span></h5>
+    <h5 style="color: turquoise">HelloWorld.vue </br> grandChildModuleStore/name</br> <span>{{ name }}</span></h5>
+    <h5 style="color: red">HelloWorld.vue </br> grandChildModuleStore/grandchildName</br> <span>{{ grandchildName }}</span></h5>
     <button class="button-44" @click="changeNameChild('CHILD MODULE STORE')">SET CHILD NAME</button>
     <button class="button-44" @click="changeNameGrandchild('GRANDCHILD MODULE STORE')">CHANGE GRANDCHILD NAME</button>
   </div>
 </template>
 
-<style scoped>
+<style scoped="true">
 a {
   color: #42b983;
+}
+
+span {
+  color: orange;
 }
 
 label {

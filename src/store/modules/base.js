@@ -18,7 +18,7 @@ export default class BaseStoreModule extends BaseCollectionModule {
     this.state = {
       ...this.state,
       fakeID: 0,
-      name: 'BaseStoreModule',
+      name: 'BASE STORE MODULE',
     }
 
     this.getters = {
