@@ -17,8 +17,11 @@ export default defineComponent({
     ...mapGetters({
       fakeChildID: 'childModuleStore/fakeID',
       fakeGrandID: 'grandChildModuleStore/fakeID',
+      name: 'childModuleStore/name',
       fakeBaseID: 'baseModuleStore/fakeID',
       dumbdata: 'childModuleStore/dumbdata',
+      childName: 'childModuleStore/childName',
+      grandchildName: 'grandChildModuleStore/grandchildName'
     }),
     updatr() {
       return this.updatefakeID()
@@ -28,6 +31,9 @@ export default defineComponent({
     ...mapActions({
       updatefakeID: 'childModuleStore/updatefakeID',
       get: 'grandChildModuleStore/get',
+      changeNameChild: 'childModuleStore/changeNameChild',
+      changeNameGrandchild: 'grandChildModuleStore/changeNameGrandchild'
+
     }),
 
     bumpCount() {
@@ -46,10 +52,12 @@ export default defineComponent({
 
 <template>
   <div @click="bumpCount">
-    <h5>HelloWorld Component Starts Here</h5>
-    <h3 style="color: red">{{ `GRANDCHILD FAKE ID: ${fakeGrandID}` }}</h3>
-    <h3 style="color: green">{{ `CHILD FAKE ID: ${fakeChildID}` }}</h3>
-    <h3 style="color: red">{{ `BASE FAKE ID: ${fakeBaseID}` }}</h3>
+    <h5>HelloWorld.vue </br> childModuleStore/name</br> {{ name }}</h5>
+    <h5 style="color: red">HelloWorld.vue </br> childModuleStore/childName</br> {{ childName }}</h5>
+    <h5 style="color: turquoise">HelloWorld.vue </br> grandChildModuleStore/name</br> {{ name }}</h5>
+    <h5 style="color: red">HelloWorld.vue </br> grandChildModuleStore/grandchildName</br> {{ grandchildName }}</h5>
+    <button class="button-44" @click="changeNameChild('CHILD MODULE STORE')">SET CHILD NAME</button>
+    <button class="button-44" @click="changeNameGrandchild('GRANDCHILD MODULE STORE')">CHANGE GRANDCHILD NAME</button>
   </div>
 </template>
 
@@ -61,6 +69,47 @@ a {
 label {
   margin: 0 0.5em;
   font-weight: bold;
+}
+
+/* CSS */
+.button-44 {
+  background: turquoise;
+  border-radius: 11px;
+  box-sizing: border-box;
+  color: orange;
+  cursor: pointer;
+  display: flex;
+  font-family: Mija,-apple-system,BlinkMacSystemFont,Roboto,"Roboto Slab","Droid Serif","Segoe UI",system-ui,Arial,sans-serif;
+  font-size: 1.15em;
+  font-weight: 800;
+  justify-content: center;
+  line-height: 33.4929px;
+  padding: .8em 1em;
+  text-align: center;
+  text-decoration: none;
+  text-decoration-skip-ink: auto;
+  text-underline-offset: 1px;
+  transition: all .2s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 30%;
+  margin: 39px auto;
+  word-break: break-word;
+  border: 0;
+}
+
+.button-44:active,
+.button-44:focus {
+  border-bottom-style: none;
+  border-color: #dadada;
+  box-shadow: rgba(0, 0, 0, .3) 0 3px 3px inset;
+  outline: 0;
+}
+
+.button-44:hover {
+  border-bottom-style: none;
+  border-color: #dadada;
 }
 
 code {

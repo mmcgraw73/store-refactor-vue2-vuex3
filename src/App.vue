@@ -11,6 +11,8 @@ export default defineComponent({
   computed: {
     ...mapGetters({
       fakeID: 'baseModuleStore/fakeID',
+      name: 'baseModuleStore/name',
+      gettersLong: 'baseModuleStore/gettersLong',
     }),
   },
 })
@@ -19,15 +21,19 @@ export default defineComponent({
 <template>
   <div id="app">
     <img src="@/assets/logo.svg" alt="Vite logo" />
-    <h2>{{ `APP.VUE - FAKE ID: ${fakeID}` }}</h2>
-    <HelloWorld msg="Hello Vue 2 + Vite" />
+    <h5>App.vue </br> baseModuleStore/name </br>{{ name }}</h5>
+    <HelloWorld :msg="`${name}`" />
   </div>
 </template>
 
-<style>
+<style scoped="true">
 html {
-  background: #222021;
+  background: #363636;
 }
+h5 {
+  color: red;
+}
+
 img {
   max-width: 200px;
 }
@@ -36,7 +42,7 @@ img {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: lime;
+  color: turquoise;
   margin-top: 60px;
 }
 </style>
