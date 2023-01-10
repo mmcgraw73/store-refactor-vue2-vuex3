@@ -18,14 +18,14 @@ export default class BaseStoreModule extends BaseCollectionModule {
     this.state = {
       ...this.state,
       fakeID: 0,
-      name: 'BASE STORE MODULE',
+      baseName: 'BASE STORE MODULE',
     }
 
     this.getters = {
       ...this.getters,
       fakeID: (state) => state.fakeID,
       gettersLong: () => this.getters.length,
-      name: (state) => state.name,
+      baseName: (state) => state.baseName,
     }
 
     this.actions = {

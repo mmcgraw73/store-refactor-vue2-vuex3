@@ -11,7 +11,7 @@ export default defineComponent({
   computed: {
     ...mapGetters({
       fakeID: 'baseModuleStore/fakeID',
-      name: 'baseModuleStore/name',
+      baseName: 'baseModuleStore/baseName',
       gettersLong: 'baseModuleStore/gettersLong',
     }),
   },
@@ -21,8 +21,8 @@ export default defineComponent({
 <template>
   <div id="app">
     <img src="@/assets/logo.svg" alt="Vite logo" />
-    <h5>App.vue </br> baseModuleStore/name </br>{{ name }}</h5>
-    <HelloWorld :msg="`${name}`" />
+    <h5>App.vue </br> baseModuleStore/baseName </br>{{ baseName }}</h5>
+    <HelloWorld :msg="`${baseName}`" />
   </div>
 </template>
 

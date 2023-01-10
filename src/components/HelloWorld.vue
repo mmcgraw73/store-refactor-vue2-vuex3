@@ -17,7 +17,7 @@ export default defineComponent({
     ...mapGetters({
       fakeChildID: 'childModuleStore/fakeID',
       fakeGrandID: 'grandChildModuleStore/fakeID',
-      name: 'childModuleStore/name',
+      baseName: 'childModuleStore/baseName',
       fakeBaseID: 'baseModuleStore/fakeID',
       dumbdata: 'childModuleStore/dumbdata',
       childName: 'childModuleStore/childName',
@@ -52,10 +52,12 @@ export default defineComponent({
 
 <template>
   <div @click="bumpCount">
-    <h5>HelloWorld.vue </br> childModuleStore/name</br> <span>{{ name }}</span></h5>
+    <h5>HelloWorld.vue </br> childModuleStore/baseName</br> <span>{{ baseName }}</span></h5>
     <h5 style="color: red">HelloWorld.vue </br> childModuleStore/childName</br> <span>{{ childName }}</span></h5>
-    <h5 style="color: turquoise">HelloWorld.vue </br> grandChildModuleStore/name</br> <span>{{ name }}</span></h5>
+    <h5 style="color: turquoise">HelloWorld.vue </br> grandChildModuleStore/baseName</br> <span>{{ baseName }}</span></h5>
+    <h5 style="color: red">HelloWorld.vue </br> grandChildModuleStore/childName</br> <span>{{ childName }}</span></h5>
     <h5 style="color: red">HelloWorld.vue </br> grandChildModuleStore/grandchildName</br> <span>{{ grandchildName }}</span></h5>
+    
     <button class="button-44" @click="changeNameChild('CHILD MODULE STORE')">SET CHILD NAME</button>
     <button class="button-44" @click="changeNameGrandchild('GRANDCHILD MODULE STORE')">CHANGE GRANDCHILD NAME</button>
   </div>
