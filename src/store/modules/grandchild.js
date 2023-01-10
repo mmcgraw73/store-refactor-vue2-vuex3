@@ -27,8 +27,8 @@ export default class GrandchildStoreModule extends ChildStoreModule {
             commit(RESET_BASE_ID, json.id)
           })
       },
-      changeNameGrandchild: ({ commit }, state, name) => {
-        console.log('old name', state.grandchildName)
+      changeNameGrandchild: ({ commit, getters }, name) => {
+        console.log('old name', getters.grandchildName)
         console.log('new name', name)
         commit(SET_NAME, name)
       },
