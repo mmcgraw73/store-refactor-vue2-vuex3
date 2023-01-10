@@ -52,11 +52,11 @@ export default defineComponent({
 
 <template>
   <div @click="bumpCount">
-    <h5>HelloWorld.vue </br> childModuleStore/baseName</br> <span>{{ baseName }}</span></h5>
-    <h5 style="color: red">HelloWorld.vue </br> childModuleStore/childName</br> <span>{{ childName }}</span></h5>
-    <h5 style="color: turquoise">HelloWorld.vue </br> grandChildModuleStore/baseName</br> <span>{{ baseName }}</span></h5>
-    <h5 style="color: red">HelloWorld.vue </br> grandChildModuleStore/childName</br> <span>{{ childName }}</span></h5>
-    <h5 style="color: red">HelloWorld.vue </br> grandChildModuleStore/grandchildName</br> <span>{{ grandchildName }}</span></h5>
+    <h5>HelloWorld.vue </br> childModuleStore/baseName</br> <span>{{ baseName }}</span></h5><hr>
+    <h5 style="color: red">HelloWorld.vue </br> childModuleStore/childName</br> <span>{{ childName }}</span></h5><hr>
+    <h5 style="color: turquoise">HelloWorld.vue </br> grandChildModuleStore/baseName</br> <span>{{ baseName }}</span></h5><hr>
+    <h5 style="color: red">HelloWorld.vue </br> grandChildModuleStore/childName</br> <span>{{ childName }}</span></h5><hr>
+    <h5 style="color: red">HelloWorld.vue </br> grandChildModuleStore/grandchildName</br> <span>{{ grandchildName }}</span></h5><hr>
     
     <button class="button-44" @click="changeNameChild('CHILD MODULE STORE')">SET CHILD NAME</button>
     <button class="button-44" @click="changeNameGrandchild('GRANDCHILD MODULE STORE')">CHANGE GRANDCHILD NAME</button>
@@ -123,5 +123,10 @@ code {
   padding: 2px 4px;
   border-radius: 4px;
   color: #304455;
+}
+hr {
+  width: 50%;
+  margin: auto;
+  border-color: tomato;
 }
 </style>

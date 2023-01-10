@@ -21,7 +21,8 @@ export default defineComponent({
 <template>
   <div id="app">
     <img src="@/assets/logo.svg" alt="Vite logo" />
-    <h5>App.vue </br> baseModuleStore/baseName </br>{{ baseName }}</h5>
+    <h5>App.vue </br> baseModuleStore/baseName </br><span>{{ baseName }}</span></h5>
+    <hr>
     <HelloWorld :msg="`${baseName}`" />
   </div>
 </template>
@@ -33,8 +34,13 @@ html {
 h5 {
   color: red;
 }
+hr {
+  width: 50%;
+  margin: auto;
+  border-color: tomato;
+}
 span {
-  color: yellow;
+  color: orange;
 }
 
 img {
