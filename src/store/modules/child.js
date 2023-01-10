@@ -28,7 +28,8 @@ export default class ChildStoreModule extends BaseStoreModule {
             commit(RESET_BASE_ID, json.id)
           })
       },
-      changeNameChild: ({ commit }, name) => {
+      changeNameChild: ({ commit, getters }, name) => {
+        console.log('old child name', getters.childName)
         commit(SET_NAME, name)
       },
     }

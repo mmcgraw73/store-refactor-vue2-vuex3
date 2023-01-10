@@ -56,10 +56,10 @@ export default defineComponent({
     <h5 style="color: red">HelloWorld.vue </br> childModuleStore/childName</br> <span>{{ childName }}</span></h5><hr>
     <h5 style="color: turquoise">HelloWorld.vue </br> grandChildModuleStore/baseName</br> <span>{{ baseName }}</span></h5><hr>
     <h5 style="color: red">HelloWorld.vue </br> grandChildModuleStore/childName</br> <span>{{ childName }}</span></h5><hr>
-    <h5 style="color: red">HelloWorld.vue </br> grandChildModuleStore/grandchildName</br> <span>{{ grandchildName }}</span></h5><hr>
+    <h5 style="color: turquoise">HelloWorld.vue </br> grandChildModuleStore/grandchildName</br> <span>{{ grandchildName }}</span></h5><hr>
     
     <button class="button-44" @click="changeNameChild('CHILD MODULE STORE')">SET CHILD NAME</button>
-    <button class="button-44" @click="changeNameGrandchild('GRANDCHILD MODULE STORE')">CHANGE GRANDCHILD NAME</button>
+    <button class="button-44" @click="changeNameGrandchild('GRANDCHILD MODULE STORE')">SET GRANDCHILD NAME</button>
   </div>
 </template>
 
