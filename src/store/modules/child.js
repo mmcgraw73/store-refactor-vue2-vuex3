@@ -8,7 +8,7 @@ export default class ChildStoreModule extends BaseStoreModule {
 
     this.state = {
       ...this.state,
-      childName: 'unnamed c',
+      childName: 'unnamed child',
     }
 
     this.getters = {

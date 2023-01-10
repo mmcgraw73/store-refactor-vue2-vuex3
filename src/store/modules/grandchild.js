@@ -8,7 +8,7 @@ export default class GrandchildStoreModule extends ChildStoreModule {
 
     this.state = {
       ...this.state,
-      grandchildName: 'unnamed gc',
+      grandchildName: 'unnamed grandchild',
     }
 
     this.getters = {
