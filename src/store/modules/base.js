@@ -5,6 +5,7 @@
 // --
 
 import BaseCollectionModule from '@/assets/imported_npm_package/base_collection_store.ts'
+import { RESET_ALL_NAMES } from '@/store/constants'
 
 // inside vue app we create...
 // this is all common/shared/required properties for every store
@@ -30,10 +31,18 @@ export default class BaseStoreModule extends BaseCollectionModule {
 
     this.actions = {
       ...this.actions,
+      resetAllNames: ({ commit, state, getters }) => {
+        commit(RESET_ALL_NAMES)
+      },
     }
 
     this.mutations = {
       ...this.mutations,
+      [RESET_ALL_NAMES]: (state) => {
+        state.grandchildName = state.baseName
+        state.childName = state.baseName
+        state.baseName = state.baseName
+      },
     }
   }
 }

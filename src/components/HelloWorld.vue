@@ -17,8 +17,8 @@ export default defineComponent({
     ...mapGetters({
       fakeChildID: 'childModuleStore/fakeID',
       fakeGrandID: 'grandChildModuleStore/fakeID',
-      baseName: 'childModuleStore/baseName',
-      fakeBaseID: 'baseModuleStore/fakeID',
+      baseName: 'baseModuleStore/baseName',
+      fakeBaseID: 'childModuleStore/fakeID',
       dumbdata: 'childModuleStore/dumbdata',
       childName: 'childModuleStore/childName',
       grandchildName: 'grandChildModuleStore/grandchildName'
@@ -32,9 +32,16 @@ export default defineComponent({
       updatefakeID: 'childModuleStore/updatefakeID',
       get: 'grandChildModuleStore/get',
       changeNameChild: 'childModuleStore/changeNameChild',
-      changeNameGrandchild: 'grandChildModuleStore/changeNameGrandchild'
+      changeNameGrandchild: 'grandChildModuleStore/changeNameGrandchild',
+      resetAllNamesGC: 'grandChildModuleStore/resetAllNames',
+      resetAllNamesC: 'childModuleStore/resetAllNames'
 
     }),
+
+    resetAllNames() {
+      this.resetAllNamesGC()
+      this.resetAllNamesC()
+    },
 
     bumpCount() {
       this.count = this.count++
@@ -61,6 +68,8 @@ export default defineComponent({
     
     <button class="button-44" @click="changeNameChild('CHILD MODULE STORE')">SET CHILD NAME</button>
     <button class="button-44" @click="changeNameGrandchild('GRANDCHILD MODULE STORE')">SET GRANDCHILD NAME</button>
+    <button class="button-44" @click="resetAllNames()">RESET ALL NAMES</button>
+    <h3 class="thanks">Congratulations!!</br> you are now ready for your {{fakeBaseID}} lessons!</h3>
   </div>
 </template>
 
@@ -76,6 +85,10 @@ span {
 label {
   margin: 0 0.5em;
   font-weight: bold;
+}
+
+.thanks {
+  text-transform: uppercase;
 }
 
 /* CSS */

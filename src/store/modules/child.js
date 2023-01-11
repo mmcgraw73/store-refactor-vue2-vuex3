@@ -21,7 +21,7 @@ export default class ChildStoreModule extends BaseStoreModule {
     this.actions = {
       ...this.actions,
       updatefakeID: ({ commit }) => {
-        fetch('https://api.api-ninjas.com/v1/hobbies?category=general', {
+        fetch('https://api.api-ninjas.com/v1/randomword', {
           method: 'GET',
           headers: {
             'X-Api-Key': 'OhWGGA5O+mifNb+kNOaC6A==bxPKqej4Zo1EiA20',
@@ -30,11 +30,10 @@ export default class ChildStoreModule extends BaseStoreModule {
           .then((response) => response.json())
           .then((json) => {
             console.log(json)
-            commit(RESET_BASE_ID, json.id)
+            commit(RESET_BASE_ID, json.word)
           })
       },
       changeNameChild: ({ commit, getters }, name) => {
-        console.log('old child name', getters.childName)
         fetch('https://api.api-ninjas.com/v1/hobbies?category=general', {
           method: 'GET',
           headers: {
@@ -43,7 +42,6 @@ export default class ChildStoreModule extends BaseStoreModule {
         })
           .then((response) => response.json())
           .then((json) => {
-            console.log('hobby', json.hobby)
             commit(SET_NAME, json.hobby)
           })
       },

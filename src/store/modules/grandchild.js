@@ -15,6 +15,7 @@ export default class GrandchildStoreModule extends ChildStoreModule {
       ...this.getters,
       name: (state) => state.name,
       grandchildName: (state) => state.grandchildName,
+      
     }
 
     this.actions = {
