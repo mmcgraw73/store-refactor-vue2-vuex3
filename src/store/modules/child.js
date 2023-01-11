@@ -21,7 +21,12 @@ export default class ChildStoreModule extends BaseStoreModule {
     this.actions = {
       ...this.actions,
       updatefakeID: ({ commit }) => {
-        fetch('https://jsonplaceholder.typicode.com/posts/10')
+        fetch('https://api.api-ninjas.com/v1/hobbies?category=general', {
+          method: 'GET',
+          headers: {
+            'X-Api-Key': 'OhWGGA5O+mifNb+kNOaC6A==bxPKqej4Zo1EiA20',
+          },
+        })
           .then((response) => response.json())
           .then((json) => {
             console.log(json)
@@ -30,7 +35,17 @@ export default class ChildStoreModule extends BaseStoreModule {
       },
       changeNameChild: ({ commit, getters }, name) => {
         console.log('old child name', getters.childName)
-        commit(SET_NAME, name)
+        fetch('https://api.api-ninjas.com/v1/hobbies?category=general', {
+          method: 'GET',
+          headers: {
+            'X-Api-Key': 'OhWGGA5O+mifNb+kNOaC6A==bxPKqej4Zo1EiA20',
+          },
+        })
+          .then((response) => response.json())
+          .then((json) => {
+            console.log('hobby', json.hobby)
+            commit(SET_NAME, json.hobby)
+          })
       },
     }
 

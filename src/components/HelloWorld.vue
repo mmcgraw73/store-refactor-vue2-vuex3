@@ -38,6 +38,7 @@ export default defineComponent({
 
     bumpCount() {
       this.count = this.count++
+      this.updatefakeID()
       return this.get
     },
   },

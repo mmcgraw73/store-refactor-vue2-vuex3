@@ -19,18 +19,26 @@ export default class GrandchildStoreModule extends ChildStoreModule {
 
     this.actions = {
       ...this.actions,
-      updatefakeID: ({ commit }, state, getters) => {
-        fetch('https://jsonplaceholder.typicode.com/posts/10')
+      updatefakeID: ({ commit, state, getters }) => {
+        // fetch('https://api.api-ninjas.com/v1/hobbies?category=general').then((response) => console.log('r', response))
+        // .then((json) => {
+        //   console.log(json)
+        //   commit(RESET_BASE_ID, json.id)
+        // })
+      },
+      changeNameGrandchild: ({ commit, getters }) => {
+        console.log('old grandchild name', getters.grandchildName)
+        fetch('https://api.api-ninjas.com/v1/hobbies?category=general', {
+          method: 'GET',
+          headers: {
+            'X-Api-Key': 'OhWGGA5O+mifNb+kNOaC6A==bxPKqej4Zo1EiA20',
+          },
+        })
           .then((response) => response.json())
           .then((json) => {
-            console.log(json)
-            commit(RESET_BASE_ID, json.id)
+            //console.log('hobby', json.hobby)
+            commit(SET_NAME, json.hobby)
           })
-      },
-      changeNameGrandchild: ({ commit, getters }, name) => {
-        console.log('old name', getters.grandchildName)
-        console.log('new name', name)
-        commit(SET_NAME, name)
       },
     }
 
